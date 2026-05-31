@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Barbearia Premium - Cortes masculinos de alta qualidade, barba e tratamentos exclusivos. Agende seu horário!">
+    <title>Barbearia Premium | Cortes & Barba de Alta Qualidade</title>
+
+    <!-- ===== FONTES DO GOOGLE ===== -->
+    <!-- Essas fontes dão um visual moderno e elegante ao site -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- ===== ANIMATE.CSS ===== -->
+    <!-- Biblioteca para animações elegantes -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+
+    <!-- ===== ESTILOS CSS ===== -->
+    <!-- Arquivo principal de estilos -->
+    <link rel="stylesheet" href="style.css">
+    <!-- Arquivo de responsividade separado -->
+    <link rel="stylesheet" href="responsive.css">
+</head>
+
+<body>
+
+    <!-- ===== HEADER / NAVEGAÇÃO ===== -->
+    <!-- Essa é a barra de navegação fixa no topo -->
+    <header class="header" id="header">
+        <nav class="nav-container">
+            <!-- Logo da barbearia -->
+            <a href="#" class="nav-logo">
+                <span class="nav-logo-icon">✂</span>
+                <span class="nav-logo-text">BARBER<span class="nav-logo-highlight">KING</span></span>
+            </a>
+
+            <!-- Links do menu de navegação -->
+            <ul class="nav-menu" id="nav-menu">
+                <li class="nav-item">
+                    <a href="#home" class="nav-link">Início</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#sobre" class="nav-link">Sobre</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#servicos" class="nav-link">Serviços</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#galeria" class="nav-link">Galeria</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#localizacao" class="nav-link">Localização</a>
+                </li>
+            </ul>
+
+            <!-- Botão CTA do header -->
+            <a href="https://wa.me/5511999999999" target="_blank" class="nav-button">
+                Agendar Horário
+            </a>
+
+            <!-- Botão do menu mobile (hamburguer) -->
+            <button class="nav-toggle" id="nav-toggle" aria-label="Abrir menu">
+                <span class="nav-toggle-line"></span>
+                <span class="nav-toggle-line"></span>
+                <span class="nav-toggle-line"></span>
+            </button>
+        </nav>
+    </header>
+
+    <!-- ===== HERO SECTION ===== -->
+    <!-- Essa é a seção principal com a chamada de impacto -->
+    <section class="hero" id="home">
+        <div class="hero-overlay"></div>
+        <div class="hero-container">
+            <div class="hero-content animate__animated animate__fadeInUp">
+                <!-- Subtítulo elegante -->
+                <span class="hero-subtitle">— Barbearia Premium —</span>
+
+                <!-- Título principal de impacto -->
+                <h1 class="hero-title">
+                    Arte do <span class="hero-title-highlight">Corte Masculino</span>
+                </h1>
+
+                <!-- Descrição breve -->
+                <p class="hero-text">
+                    Experiência única em cortes, barba e tratamentos exclusivos.
+                    Seu estilo começa aqui.
+                </p>
+
+                <!-- Botões de ação -->
+                <div class="hero-buttons">
+                    <a href="https://wa.me/5511999999999" target="_blank" class="hero-button-cta">
+                        <span class="hero-button-icon">📱</span>
+                        Agendar pelo WhatsApp
+                    </a>
+                    <a href="#servicos" class="hero-button-secondary">
+                        Ver Serviços
+                    </a>
+                </div>
+            </div>
+
+            <!-- Indicador de scroll -->
+            <div class="hero-scroll-indicator animate__animated animate__fadeInUp animate__delay-1s">
+                <span class="hero-scroll-text">Role para baixo</span>
+                <span class="hero-scroll-arrow">↓</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== SOBRE A BARBEARIA ===== -->
+    <!-- Seção que apresenta a história e diferenciais da barbearia -->
+    <section class="sobre" id="sobre">
+        <div class="sobre-container">
+            <!-- Imagem da barbearia -->
+            <div class="sobre-image-wrapper animate__animated" data-animate="fadeInLeft">
+                <div class="sobre-image">
+                    <img src="https://images.unsplash.com/photo-1585747860715-2ba37e788b70?w=600&h=700&fit=crop"
+                        alt="Interior da barbearia premium">
+                </div>
+                <!-- Badge de experiência -->
+                <div class="sobre-badge">
+                    <span class="sobre-badge-number">10+</span>
+                    <span class="sobre-badge-text">Anos de Experiência</span>
+                </div>
+            </div>
+
+            <!-- Conteúdo textual -->
+            <div class="sobre-content animate__animated" data-animate="fadeInRight">
+                <span class="sobre-subtitle">— Quem Somos —</span>
+                <h2 class="sobre-title">Tradição e <span class="sobre-title-highlight">Modernidade</span></h2>
+                <p class="sobre-text">
+                    A BarberKing nasceu da paixão pelo cuidado masculino. Combinamos técnicas clássicas
+                    de barbearia com as tendências mais modernas do mercado, oferecendo uma experiência
+                    única para homens que valorizam estilo e qualidade.
+                </p>
+                <p class="sobre-text">
+                    Nosso ambiente foi pensado para proporcionar conforto e sofisticação.
+                    Cada detalhe foi cuidadosamente planejado para que você se sinta em casa
+                    enquanto cuida da sua imagem.
+                </p>
+
+                <!-- Lista de diferenciais -->
+                <ul class="sobre-diferenciais">
+                    <li class="sobre-diferencial-item">
+                        <span class="sobre-diferencial-icon">✓</span>
+                        Profissionais especializados e certificados
+                    </li>
+                    <li class="sobre-diferencial-item">
+                        <span class="sobre-diferencial-icon">✓</span>
+                        Produtos premium importados
+                    </li>
+                    <li class="sobre-diferencial-item">
+                        <span class="sobre-diferencial-icon">✓</span>
+                        Ambiente climatizado e confortável
+                    </li>
+                    <li class="sobre-diferencial-item">
+                        <span class="sobre-diferencial-icon">✓</span>
+                        Cerveja artesanal cortesia
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== SERVIÇOS ===== -->
+    <!-- Seção que mostra todos os serviços oferecidos -->
+    <section class="servicos" id="servicos">
+        <div class="servicos-container">
+            <!-- Cabeçalho da seção -->
+            <div class="servicos-header animate__animated" data-animate="fadeInUp">
+                <span class="servicos-subtitle">— Nossos Serviços —</span>
+                <h2 class="servicos-title">O Que <span class="servicos-title-highlight">Oferecemos</span></h2>
+                <p class="servicos-description">
+                    Conheça nossa lista completa de serviços pensados especialmente para você
+                </p>
+            </div>
+
+            <!-- Grid de cards de serviços -->
+            <div class="servicos-grid">
+                <!-- Card 1: Corte -->
+                <div class="servicos-card animate__animated" data-animate="fadeInUp">
+                    <div class="servicos-card-icon">✂️</div>
+                    <h3 class="servicos-card-title">Corte Masculino</h3>
+                    <p class="servicos-card-text">
+                        Cortes modernos e clássicos executados com precisão e técnica impecável.
+                    </p>
+                    <span class="servicos-card-price">R$ 45,00</span>
+                </div>
+
+                <!-- Card 2: Barba -->
+                <div class="servicos-card animate__animated" data-animate="fadeInUp" data-delay="100">
+                    <div class="servicos-card-icon">🧔</div>
+                    <h3 class="servicos-card-title">Barba Completa</h3>
+                    <p class="servicos-card-text">
+                        Modelagem, aparação e tratamento completo com toalha quente.
+                    </p>
+                    <span class="servicos-card-price">R$ 35,00</span>
+                </div>
+
+                <!-- Card 3: Combo -->
+                <div class="servicos-card servicos-card-featured animate__animated" data-animate="fadeInUp"
+                    data-delay="200">
+                    <div class="servicos-card-badge">Mais Popular</div>
+                    <div class="servicos-card-icon">⭐</div>
+                    <h3 class="servicos-card-title">Combo Completo</h3>
+                    <p class="servicos-card-text">
+                        Corte + Barba + Sobrancelha. O pacote completo para você arrasar.
+                    </p>
+                    <span class="servicos-card-price">R$ 70,00</span>
+                </div>
+
+                <!-- Card 4: Pigmentação -->
+                <div class="servicos-card animate__animated" data-animate="fadeInUp" data-delay="300">
+                    <div class="servicos-card-icon">🎨</div>
+                    <h3 class="servicos-card-title">Pigmentação</h3>
+                    <p class="servicos-card-text">
+                        Disfarce de fios brancos com técnica natural e duradoura.
+                    </p>
+                    <span class="servicos-card-price">R$ 50,00</span>
+                </div>
+
+                <!-- Card 5: Hidratação -->
+                <div class="servicos-card animate__animated" data-animate="fadeInUp" data-delay="400">
+                    <div class="servicos-card-icon">💧</div>
+                    <h3 class="servicos-card-title">Hidratação</h3>
+                    <p class="servicos-card-text">
+                        Tratamento profundo para cabelos e barba com produtos premium.
+                    </p>
+                    <span class="servicos-card-price">R$ 40,00</span>
+                </div>
+
+                <!-- Card 6: Sobrancelha -->
+                <div class="servicos-card animate__animated" data-animate="fadeInUp" data-delay="500">
+                    <div class="servicos-card-icon">👁️</div>
+                    <h3 class="servicos-card-title">Sobrancelha</h3>
+                    <p class="servicos-card-text">
+                        Design e alinhamento para realçar seu olhar com naturalidade.
+                    </p>
+                    <span class="servicos-card-price">R$ 20,00</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== GALERIA ===== -->
+    <!-- Seção com fotos dos trabalhos realizados -->
+    <section class="galeria" id="galeria">
+        <div class="galeria-container">
+            <!-- Cabeçalho da seção -->
+            <div class="galeria-header animate__animated" data-animate="fadeInUp">
+                <span class="galeria-subtitle">— Nossa Galeria —</span>
+                <h2 class="galeria-title">Trabalhos <span class="galeria-title-highlight">Realizados</span></h2>
+                <p class="galeria-description">
+                    Confira alguns dos nossos melhores trabalhos
+                </p>
+            </div>
+
+            <!-- Grid de imagens -->
+            <div class="galeria-grid">
+                <div class="galeria-item galeria-item-large animate__animated" data-animate="zoomIn">
+                    <img src="https://images.unsplash.com/photo-1599351431202-1e0f0137899a?w=600&h=600&fit=crop"
+                        alt="Corte masculino moderno">
+                    <div class="galeria-item-overlay">
+                        <span class="galeria-item-text">Corte Degradê</span>
+                    </div>
+                </div>
+
+                <div class="galeria-item animate__animated" data-animate="zoomIn" data-delay="100">
+                    <img src="https://images.unsplash.com/photo-1503951914875-452162b0f3f1?w=400&h=400&fit=crop"
+                        alt="Barba estilizada">
+                    <div class="galeria-item-overlay">
+                        <span class="galeria-item-text">Barba Modelada</span>
+                    </div>
+                </div>
+
+                <div class="galeria-item animate__animated" data-animate="zoomIn" data-delay="200">
+                    <img src="https://images.unsplash.com/photo-1621605815971-fbc98d665033?w=400&h=400&fit=crop"
+                        alt="Corte clássico">
+                    <div class="galeria-item-overlay">
+                        <span class="galeria-item-text">Corte Clássico</span>
+                    </div>
+                </div>
+
+                <div class="galeria-item animate__animated" data-animate="zoomIn" data-delay="300">
+                    <img src="https://images.unsplash.com/photo-1622286342621-4bd786c2447c?w=400&h=400&fit=crop"
+                        alt="Acabamento perfeito">
+                    <div class="galeria-item-overlay">
+                        <span class="galeria-item-text">Acabamento</span>
+                    </div>
+                </div>
+
+                <div class="galeria-item galeria-item-wide animate__animated" data-animate="zoomIn" data-delay="400">
+                    <img src="https://images.unsplash.com/photo-1493256338651-d82f7acb2b38?w=800&h=400&fit=crop"
+                        alt="Ambiente da barbearia">
+                    <div class="galeria-item-overlay">
+                        <span class="galeria-item-text">Nosso Ambiente</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== LOCALIZAÇÃO ===== -->
+    <!-- Seção com mapa e informações de endereço -->
+    <section class="localizacao" id="localizacao">
+        <div class="localizacao-container">
+            <!-- Informações de contato -->
+            <div class="localizacao-info animate__animated" data-animate="fadeInLeft">
+                <span class="localizacao-subtitle">— Onde Estamos —</span>
+                <h2 class="localizacao-title">Venha Nos <span class="localizacao-title-highlight">Visitar</span></h2>
+
+                <!-- Cards de informação -->
+                <div class="localizacao-cards">
+                    <div class="localizacao-card">
+                        <span class="localizacao-card-icon">📍</span>
+                        <div class="localizacao-card-content">
+                            <h4 class="localizacao-card-title">Endereço</h4>
+                            <p class="localizacao-card-text">Rua das Barbearias, 123<br>Centro - São Paulo/SP</p>
+                        </div>
+                    </div>
+
+                    <div class="localizacao-card">
+                        <span class="localizacao-card-icon">🕐</span>
+                        <div class="localizacao-card-content">
+                            <h4 class="localizacao-card-title">Horário</h4>
+                            <p class="localizacao-card-text">Seg - Sáb: 09h às 20h<br>Domingo: Fechado</p>
+                        </div>
+                    </div>
+
+                    <div class="localizacao-card">
+                        <span class="localizacao-card-icon">📞</span>
+                        <div class="localizacao-card-content">
+                            <h4 class="localizacao-card-title">Telefone</h4>
+                            <p class="localizacao-card-text">(11) 99999-9999<br>(11) 3333-3333</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Mapa -->
+            <div class="localizacao-mapa animate__animated" data-animate="fadeInRight">
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3657.1975870299795!2d-46.65390542467754!3d-23.56157486170629!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce59c8da0aa315%3A0xd59f9431f2c9776a!2sAv.%20Paulista%2C%20S%C3%A3o%20Paulo%20-%20SP!5e0!3m2!1spt-BR!2sbr!4v1699999999999!5m2!1spt-BR!2sbr"
+                    width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade" title="Localização da BarberKing">
+                </iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== CTA WHATSAPP ===== -->
+    <!-- Seção de chamada para ação final -->
+    <section class="cta-whatsapp">
+        <div class="cta-whatsapp-container animate__animated" data-animate="fadeInUp">
+            <div class="cta-whatsapp-content">
+                <h2 class="cta-whatsapp-title">Pronto Para Transformar Seu Visual?</h2>
+                <p class="cta-whatsapp-text">
+                    Agende agora mesmo pelo WhatsApp e garanta seu horário.
+                    Atendimento rápido e personalizado!
+                </p>
+                <a href="https://wa.me/5511999999999?text=Olá! Gostaria de agendar um horário na BarberKing."
+                    target="_blank" class="cta-whatsapp-button">
+                    <span class="cta-whatsapp-button-icon">💬</span>
+                    Agendar pelo WhatsApp
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== FOOTER ===== -->
+    <!-- Rodapé do site com informações finais -->
+    <footer class="footer">
+        <div class="footer-container">
+            <!-- Coluna da logo e descrição -->
+            <div class="footer-brand">
+                <a href="#" class="footer-logo">
+                    <span class="footer-logo-icon">✂</span>
+                    <span class="footer-logo-text">BARBER<span class="footer-logo-highlight">KING</span></span>
+                </a>
+                <p class="footer-description">
+                    Sua barbearia premium em São Paulo. Tradição, qualidade e estilo em cada corte.
+                </p>
+            </div>
+
+            <!-- Coluna de links rápidos -->
+            <div class="footer-links">
+                <h4 class="footer-title">Links Rápidos</h4>
+                <ul class="footer-menu">
+                    <li><a href="#home" class="footer-link">Início</a></li>
+                    <li><a href="#sobre" class="footer-link">Sobre</a></li>
+                    <li><a href="#servicos" class="footer-link">Serviços</a></li>
+                    <li><a href="#galeria" class="footer-link">Galeria</a></li>
+                    <li><a href="#localizacao" class="footer-link">Localização</a></li>
+                </ul>
+            </div>
+
+            <!-- Coluna de contato -->
+            <div class="footer-contact">
+                <h4 class="footer-title">Contato</h4>
+                <p class="footer-text">📍 Rua das Barbearias, 123</p>
+                <p class="footer-text">📞 (11) 99999-9999</p>
+                <p class="footer-text">✉️ contato@barberking.com.br</p>
+            </div>
+
+            <!-- Coluna de redes sociais -->
+            <div class="footer-social">
+                <h4 class="footer-title">Redes Sociais</h4>
+                <div class="footer-social-links">
+                    <a href="#" class="footer-social-link" aria-label="Instagram">
+                        <span>📷</span>
+                    </a>
+                    <a href="#" class="footer-social-link" aria-label="Facebook">
+                        <span>📘</span>
+                    </a>
+                    <a href="#" class="footer-social-link" aria-label="WhatsApp">
+                        <span>💬</span>
+                    </a>
+                    <a href="#" class="footer-social-link" aria-label="YouTube">
+                        <span>🎬</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Barra de copyright -->
+        <div class="footer-bottom">
+            <p class="footer-copyright">
+                © 2024 BarberKing. Todos os direitos reservados.
+            </p>
+        </div>
+    </footer>
+
+    <!-- ===== BOTÃO VOLTAR AO TOPO ===== -->
+    <!-- Botão que aparece ao rolar a página -->
+    <button class="back-to-top" id="back-to-top" aria-label="Voltar ao topo">
+        ↑
+    </button>
+
+    <!-- ===== BOTÃO FLUTUANTE WHATSAPP ===== -->
+    <!-- Botão fixo de WhatsApp no canto da tela -->
+    <a href="https://wa.me/5511999999999" target="_blank" class="whatsapp-float"
+        aria-label="Fale conosco pelo WhatsApp">
+        <span class="whatsapp-float-icon">💬</span>
+    </a>
+
+    <!-- ===== JAVASCRIPT ===== -->
+    <!-- Arquivo de scripts do site -->
+    <script src="script.js"></script>
+</body>
+
+</html>

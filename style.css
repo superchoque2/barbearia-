@@ -1,0 +1,1191 @@
+/* ===================================================
+   BARBERKING - ESTILOS PRINCIPAIS
+   Arquivo: style.css
+   Descrição: Estilos principais do site (sem responsividade)
+   =================================================== */
+
+/* ===== VARIÁVEIS CSS ===== */
+/* Aqui definimos as cores e valores que serão reutilizados em todo o site */
+:root {
+    /* Cores principais */
+    --cor-primaria: #ff6b00;        /* Laranja - cor de destaque */
+    --cor-primaria-escura: #e05a00; /* Laranja mais escuro para hover */
+    --cor-primaria-clara: #ff8533;  /* Laranja mais claro */
+    
+    /* Cores neutras */
+    --cor-preto: #0a0a0a;           /* Preto principal */
+    --cor-preto-claro: #1a1a1a;     /* Preto mais claro para fundos */
+    --cor-cinza-escuro: #2a2a2a;    /* Cinza escuro */
+    --cor-cinza: #666666;           /* Cinza médio para textos */
+    --cor-cinza-claro: #999999;     /* Cinza claro */
+    --cor-branco: #ffffff;          /* Branco */
+    --cor-branco-off: #f5f5f5;      /* Branco levemente acinzentado */
+    
+    /* Tipografia */
+    --fonte-titulo: 'Playfair Display', serif;  /* Fonte elegante para títulos */
+    --fonte-texto: 'Montserrat', sans-serif;    /* Fonte moderna para textos */
+    
+    /* Espaçamentos */
+    --espacamento-secao: 100px;     /* Espaço entre seções */
+    --espacamento-container: 5%;    /* Margem lateral do container */
+    
+    /* Outros */
+    --sombra-padrao: 0 10px 40px rgba(0, 0, 0, 0.3);  /* Sombra suave */
+    --transicao-padrao: all 0.3s ease;                /* Transição suave */
+    --raio-borda: 8px;                                /* Arredondamento padrão */
+}
+
+/* ===== RESET E BASE ===== */
+/* Remove estilos padrão do navegador e define uma base consistente */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Scroll suave em todo o site */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Configurações base do body */
+body {
+    font-family: var(--fonte-texto);
+    font-size: 16px;
+    line-height: 1.6;
+    color: var(--cor-branco);
+    background-color: var(--cor-preto);
+    overflow-x: hidden;
+}
+
+/* Remove decoração de links */
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Imagens responsivas */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Lista sem marcadores */
+ul {
+    list-style: none;
+}
+
+/* Botões sem estilo padrão */
+button {
+    border: none;
+    background: none;
+    cursor: pointer;
+    font-family: inherit;
+}
+
+/* ===== HEADER / NAVEGAÇÃO ===== */
+/* Estilo da barra de navegação fixa no topo */
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    padding: 20px 0;
+    transition: var(--transicao-padrao);
+}
+
+/* Quando o header está com scroll, adiciona fundo */
+.header.scrolled {
+    background-color: rgba(10, 10, 10, 0.95);
+    backdrop-filter: blur(10px);
+    padding: 15px 0;
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.5);
+}
+
+/* Container da navegação - organiza os itens */
+.nav-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 var(--espacamento-container);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* ===== LOGO ===== */
+/* Estilo do logotipo da barbearia */
+.nav-logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-family: var(--fonte-titulo);
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--cor-branco);
+    transition: var(--transicao-padrao);
+}
+
+/* Ícone da tesoura no logo */
+.nav-logo-icon {
+    font-size: 1.5rem;
+    color: var(--cor-primaria);
+}
+
+/* Texto principal do logo */
+.nav-logo-text {
+    letter-spacing: 2px;
+}
+
+/* Destaque laranja no logo (KING) */
+.nav-logo-highlight {
+    color: var(--cor-primaria);
+}
+
+/* Efeito hover no logo */
+.nav-logo:hover {
+    transform: scale(1.02);
+}
+
+/* ===== MENU DE NAVEGAÇÃO ===== */
+/* Lista de links do menu */
+.nav-menu {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+
+/* Cada item do menu */
+.nav-item {
+    position: relative;
+}
+
+/* Links do menu */
+.nav-link {
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: var(--cor-branco);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 10px 0;
+    transition: var(--transicao-padrao);
+}
+
+/* Linha decorativa que aparece no hover */
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--cor-primaria);
+    transition: var(--transicao-padrao);
+}
+
+/* Quando passa o mouse, a linha aparece */
+.nav-link:hover {
+    color: var(--cor-primaria);
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
+
+/* ===== BOTÃO CTA DO HEADER ===== */
+/* Botão de agendar no canto direito */
+.nav-button {
+    background: linear-gradient(135deg, var(--cor-primaria), var(--cor-primaria-escura));
+    color: var(--cor-branco);
+    padding: 12px 28px;
+    border-radius: 50px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: var(--transicao-padrao);
+    box-shadow: 0 4px 15px rgba(255, 107, 0, 0.3);
+}
+
+/* Efeito hover do botão */
+.nav-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(255, 107, 0, 0.4);
+}
+
+/* ===== MENU MOBILE (HAMBURGUER) ===== */
+/* Botão de menu para dispositivos móveis */
+.nav-toggle {
+    display: none;
+    flex-direction: column;
+    gap: 6px;
+    padding: 10px;
+    cursor: pointer;
+}
+
+/* Cada linha do ícone hamburguer */
+.nav-toggle-line {
+    width: 25px;
+    height: 2px;
+    background-color: var(--cor-branco);
+    transition: var(--transicao-padrao);
+}
+
+/* ===== HERO SECTION ===== */
+/* Seção principal com a chamada de impacto */
+.hero {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: url('https://images.unsplash.com/photo-1621605815971-fbc98d665033?w=1920&h=1080&fit=crop');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+/* Camada escura sobre a imagem para melhorar leitura */
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        135deg,
+        rgba(10, 10, 10, 0.9) 0%,
+        rgba(10, 10, 10, 0.7) 50%,
+        rgba(10, 10, 10, 0.8) 100%
+    );
+}
+
+/* Container do conteúdo da hero */
+.hero-container {
+    position: relative;
+    z-index: 1;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 var(--espacamento-container);
+    text-align: center;
+}
+
+/* Conteúdo textual da hero */
+.hero-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Subtítulo da hero */
+.hero-subtitle {
+    display: inline-block;
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--cor-primaria);
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    margin-bottom: 20px;
+}
+
+/* Título principal da hero */
+.hero-title {
+    font-family: var(--fonte-titulo);
+    font-size: 4.5rem;
+    font-weight: 700;
+    line-height: 1.1;
+    margin-bottom: 25px;
+    color: var(--cor-branco);
+}
+
+/* Destaque laranja no título */
+.hero-title-highlight {
+    color: var(--cor-primaria);
+    display: block;
+}
+
+/* Texto descritivo da hero */
+.hero-text {
+    font-size: 1.2rem;
+    color: var(--cor-cinza-claro);
+    margin-bottom: 40px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Container dos botões */
+.hero-buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+/* ===== BOTÃO CTA PRINCIPAL ===== */
+/* Botão principal de call-to-action */
+.hero-button-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: linear-gradient(135deg, var(--cor-primaria), var(--cor-primaria-escura));
+    color: var(--cor-branco);
+    padding: 18px 40px;
+    border-radius: 50px;
+    font-size: 1rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: var(--transicao-padrao);
+    box-shadow: 0 8px 30px rgba(255, 107, 0, 0.4);
+}
+
+/* Ícone dentro do botão */
+.hero-button-icon {
+    font-size: 1.2rem;
+}
+
+/* Efeito hover do botão CTA */
+.hero-button-cta:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 40px rgba(255, 107, 0, 0.5);
+}
+
+/* Botão secundário (contorno) */
+.hero-button-secondary {
+    display: inline-flex;
+    align-items: center;
+    padding: 18px 40px;
+    border: 2px solid var(--cor-branco);
+    border-radius: 50px;
+    color: var(--cor-branco);
+    font-size: 1rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: var(--transicao-padrao);
+}
+
+/* Efeito hover do botão secundário */
+.hero-button-secondary:hover {
+    background-color: var(--cor-branco);
+    color: var(--cor-preto);
+}
+
+/* Indicador de scroll */
+.hero-scroll-indicator {
+    position: absolute;
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    color: var(--cor-cinza-claro);
+}
+
+/* Texto do indicador de scroll */
+.hero-scroll-text {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+/* Seta animada do indicador */
+.hero-scroll-arrow {
+    font-size: 1.5rem;
+    animation: bounce 2s infinite;
+}
+
+/* Animação de pular da seta */
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-10px);
+    }
+    60% {
+        transform: translateY(-5px);
+    }
+}
+
+/* ===== SEÇÃO SOBRE ===== */
+/* Seção que apresenta a barbearia */
+.sobre {
+    padding: var(--espacamento-secao) 0;
+    background-color: var(--cor-preto-claro);
+}
+
+/* Container da seção sobre */
+.sobre-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 var(--espacamento-container);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+}
+
+/* Wrapper da imagem com posicionamento */
+.sobre-image-wrapper {
+    position: relative;
+}
+
+/* Container da imagem */
+.sobre-image {
+    position: relative;
+    overflow: hidden;
+    border-radius: var(--raio-borda);
+}
+
+/* A imagem em si */
+.sobre-image img {
+    width: 100%;
+    height: 500px;
+    object-fit: cover;
+    transition: var(--transicao-padrao);
+}
+
+/* Efeito hover na imagem */
+.sobre-image:hover img {
+    transform: scale(1.05);
+}
+
+/* Badge de experiência posicionado */
+.sobre-badge {
+    position: absolute;
+    bottom: -30px;
+    right: -30px;
+    background: linear-gradient(135deg, var(--cor-primaria), var(--cor-primaria-escura));
+    padding: 30px;
+    border-radius: var(--raio-borda);
+    text-align: center;
+    box-shadow: var(--sombra-padrao);
+}
+
+/* Número grande no badge */
+.sobre-badge-number {
+    display: block;
+    font-family: var(--fonte-titulo);
+    font-size: 3rem;
+    font-weight: 700;
+    color: var(--cor-branco);
+    line-height: 1;
+}
+
+/* Texto do badge */
+.sobre-badge-text {
+    font-size: 0.9rem;
+    color: var(--cor-branco);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Conteúdo textual da seção sobre */
+.sobre-content {
+    padding-left: 20px;
+}
+
+/* Subtítulo da seção */
+.sobre-subtitle {
+    display: inline-block;
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--cor-primaria);
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    margin-bottom: 15px;
+}
+
+/* Título da seção */
+.sobre-title {
+    font-family: var(--fonte-titulo);
+    font-size: 3rem;
+    font-weight: 700;
+    color: var(--cor-branco);
+    margin-bottom: 25px;
+    line-height: 1.2;
+}
+
+/* Destaque no título */
+.sobre-title-highlight {
+    color: var(--cor-primaria);
+}
+
+/* Parágrafos de texto */
+.sobre-text {
+    font-size: 1.05rem;
+    color: var(--cor-cinza-claro);
+    margin-bottom: 20px;
+    line-height: 1.8;
+}
+
+/* Lista de diferenciais */
+.sobre-diferenciais {
+    margin-top: 30px;
+}
+
+/* Cada item da lista de diferenciais */
+.sobre-diferencial-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 12px 0;
+    font-size: 1rem;
+    color: var(--cor-branco);
+    border-bottom: 1px solid var(--cor-cinza-escuro);
+}
+
+/* Ícone de check nos diferenciais */
+.sobre-diferencial-icon {
+    color: var(--cor-primaria);
+    font-weight: 700;
+}
+
+/* ===== SEÇÃO SERVIÇOS ===== */
+/* Seção que mostra os serviços oferecidos */
+.servicos {
+    padding: var(--espacamento-secao) 0;
+    background-color: var(--cor-preto);
+}
+
+/* Container da seção serviços */
+.servicos-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 var(--espacamento-container);
+}
+
+/* Cabeçalho da seção (centralizado) */
+.servicos-header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+/* Subtítulo da seção */
+.servicos-subtitle {
+    display: inline-block;
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--cor-primaria);
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    margin-bottom: 15px;
+}
+
+/* Título da seção */
+.servicos-title {
+    font-family: var(--fonte-titulo);
+    font-size: 3rem;
+    font-weight: 700;
+    color: var(--cor-branco);
+    margin-bottom: 15px;
+}
+
+/* Destaque no título */
+.servicos-title-highlight {
+    color: var(--cor-primaria);
+}
+
+/* Descrição da seção */
+.servicos-description {
+    font-size: 1.1rem;
+    color: var(--cor-cinza-claro);
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* Grid de cards de serviços */
+.servicos-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+/* ===== CARD DE SERVIÇO ===== */
+/* Cada card de serviço individual */
+.servicos-card {
+    position: relative;
+    background-color: var(--cor-preto-claro);
+    padding: 40px 30px;
+    border-radius: var(--raio-borda);
+    text-align: center;
+    transition: var(--transicao-padrao);
+    border: 1px solid var(--cor-cinza-escuro);
+}
+
+/* Efeito hover no card */
+.servicos-card:hover {
+    transform: translateY(-10px);
+    border-color: var(--cor-primaria);
+    box-shadow: 0 20px 40px rgba(255, 107, 0, 0.15);
+}
+
+/* Card em destaque (mais popular) */
+.servicos-card-featured {
+    background: linear-gradient(180deg, var(--cor-preto-claro) 0%, rgba(255, 107, 0, 0.1) 100%);
+    border-color: var(--cor-primaria);
+}
+
+/* Badge "Mais Popular" */
+.servicos-card-badge {
+    position: absolute;
+    top: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: linear-gradient(135deg, var(--cor-primaria), var(--cor-primaria-escura));
+    color: var(--cor-branco);
+    padding: 6px 20px;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Ícone do serviço */
+.servicos-card-icon {
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+/* Título do card */
+.servicos-card-title {
+    font-family: var(--fonte-titulo);
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--cor-branco);
+    margin-bottom: 15px;
+}
+
+/* Texto descritivo do card */
+.servicos-card-text {
+    font-size: 0.95rem;
+    color: var(--cor-cinza-claro);
+    margin-bottom: 20px;
+    line-height: 1.7;
+}
+
+/* Preço do serviço */
+.servicos-card-price {
+    display: inline-block;
+    font-family: var(--fonte-titulo);
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--cor-primaria);
+}
+
+/* ===== SEÇÃO GALERIA ===== */
+/* Seção de fotos dos trabalhos */
+.galeria {
+    padding: var(--espacamento-secao) 0;
+    background-color: var(--cor-preto-claro);
+}
+
+/* Container da galeria */
+.galeria-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 var(--espacamento-container);
+}
+
+/* Cabeçalho da seção */
+.galeria-header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+/* Subtítulo */
+.galeria-subtitle {
+    display: inline-block;
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--cor-primaria);
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    margin-bottom: 15px;
+}
+
+/* Título */
+.galeria-title {
+    font-family: var(--fonte-titulo);
+    font-size: 3rem;
+    font-weight: 700;
+    color: var(--cor-branco);
+    margin-bottom: 15px;
+}
+
+/* Destaque no título */
+.galeria-title-highlight {
+    color: var(--cor-primaria);
+}
+
+/* Descrição */
+.galeria-description {
+    font-size: 1.1rem;
+    color: var(--cor-cinza-claro);
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* Grid da galeria com layout irregular */
+.galeria-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(2, 250px);
+    gap: 20px;
+}
+
+/* Cada item da galeria */
+.galeria-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: var(--raio-borda);
+    cursor: pointer;
+}
+
+/* Item grande (ocupa 2 colunas e 2 linhas) */
+.galeria-item-large {
+    grid-column: span 2;
+    grid-row: span 2;
+}
+
+/* Item largo (ocupa 2 colunas) */
+.galeria-item-wide {
+    grid-column: span 2;
+}
+
+/* Imagem da galeria */
+.galeria-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: var(--transicao-padrao);
+}
+
+/* Overlay escuro que aparece no hover */
+.galeria-item-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        0deg,
+        rgba(255, 107, 0, 0.9) 0%,
+        rgba(10, 10, 10, 0.5) 100%
+    );
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    padding: 30px;
+    opacity: 0;
+    transition: var(--transicao-padrao);
+}
+
+/* Efeito hover na galeria */
+.galeria-item:hover .galeria-item-overlay {
+    opacity: 1;
+}
+
+.galeria-item:hover img {
+    transform: scale(1.1);
+}
+
+/* Texto do overlay */
+.galeria-item-text {
+    font-family: var(--fonte-titulo);
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: var(--cor-branco);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+/* ===== SEÇÃO LOCALIZAÇÃO ===== */
+/* Seção com mapa e informações de endereço */
+.localizacao {
+    padding: var(--espacamento-secao) 0;
+    background-color: var(--cor-preto);
+}
+
+/* Container da localização */
+.localizacao-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 var(--espacamento-container);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+}
+
+/* Informações de contato */
+.localizacao-info {
+    padding-right: 40px;
+}
+
+/* Subtítulo */
+.localizacao-subtitle {
+    display: inline-block;
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--cor-primaria);
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    margin-bottom: 15px;
+}
+
+/* Título */
+.localizacao-title {
+    font-family: var(--fonte-titulo);
+    font-size: 3rem;
+    font-weight: 700;
+    color: var(--cor-branco);
+    margin-bottom: 40px;
+    line-height: 1.2;
+}
+
+/* Destaque no título */
+.localizacao-title-highlight {
+    color: var(--cor-primaria);
+}
+
+/* Cards de informação */
+.localizacao-cards {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+/* Cada card de informação */
+.localizacao-card {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    padding: 25px;
+    background-color: var(--cor-preto-claro);
+    border-radius: var(--raio-borda);
+    border: 1px solid var(--cor-cinza-escuro);
+    transition: var(--transicao-padrao);
+}
+
+/* Hover no card */
+.localizacao-card:hover {
+    border-color: var(--cor-primaria);
+    transform: translateX(10px);
+}
+
+/* Ícone do card */
+.localizacao-card-icon {
+    font-size: 2rem;
+}
+
+/* Título do card */
+.localizacao-card-title {
+    font-family: var(--fonte-titulo);
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--cor-branco);
+    margin-bottom: 5px;
+}
+
+/* Texto do card */
+.localizacao-card-text {
+    font-size: 0.95rem;
+    color: var(--cor-cinza-claro);
+    line-height: 1.6;
+}
+
+/* Container do mapa */
+.localizacao-mapa {
+    border-radius: var(--raio-borda);
+    overflow: hidden;
+    box-shadow: var(--sombra-padrao);
+}
+
+/* Iframe do mapa */
+.localizacao-mapa iframe {
+    display: block;
+}
+
+/* ===== SEÇÃO CTA WHATSAPP ===== */
+/* Seção de chamada para ação final */
+.cta-whatsapp {
+    padding: 80px 0;
+    background: linear-gradient(
+        135deg,
+        var(--cor-primaria) 0%,
+        var(--cor-primaria-escura) 100%
+    );
+}
+
+/* Container do CTA */
+.cta-whatsapp-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 var(--espacamento-container);
+    text-align: center;
+}
+
+/* Título do CTA */
+.cta-whatsapp-title {
+    font-family: var(--fonte-titulo);
+    font-size: 2.8rem;
+    font-weight: 700;
+    color: var(--cor-branco);
+    margin-bottom: 20px;
+}
+
+/* Texto do CTA */
+.cta-whatsapp-text {
+    font-size: 1.2rem;
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 35px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Botão do CTA */
+.cta-whatsapp-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    background-color: var(--cor-branco);
+    color: var(--cor-preto);
+    padding: 18px 45px;
+    border-radius: 50px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: var(--transicao-padrao);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+}
+
+/* Ícone do botão */
+.cta-whatsapp-button-icon {
+    font-size: 1.4rem;
+}
+
+/* Hover do botão */
+.cta-whatsapp-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
+}
+
+/* ===== FOOTER ===== */
+/* Rodapé do site */
+.footer {
+    padding: 80px 0 0;
+    background-color: var(--cor-preto-claro);
+}
+
+/* Container do footer */
+.footer-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 var(--espacamento-container);
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: 60px;
+    padding-bottom: 60px;
+    border-bottom: 1px solid var(--cor-cinza-escuro);
+}
+
+/* Logo do footer */
+.footer-logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-family: var(--fonte-titulo);
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--cor-branco);
+    margin-bottom: 20px;
+}
+
+/* Ícone do logo */
+.footer-logo-icon {
+    color: var(--cor-primaria);
+}
+
+/* Destaque do logo */
+.footer-logo-highlight {
+    color: var(--cor-primaria);
+}
+
+/* Descrição no footer */
+.footer-description {
+    font-size: 0.95rem;
+    color: var(--cor-cinza-claro);
+    line-height: 1.7;
+    max-width: 300px;
+}
+
+/* Título das colunas do footer */
+.footer-title {
+    font-family: var(--fonte-titulo);
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--cor-branco);
+    margin-bottom: 25px;
+}
+
+/* Menu de links do footer */
+.footer-menu {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+/* Links do footer */
+.footer-link {
+    font-size: 0.95rem;
+    color: var(--cor-cinza-claro);
+    transition: var(--transicao-padrao);
+}
+
+.footer-link:hover {
+    color: var(--cor-primaria);
+    padding-left: 5px;
+}
+
+/* Textos de contato */
+.footer-text {
+    font-size: 0.95rem;
+    color: var(--cor-cinza-claro);
+    margin-bottom: 10px;
+}
+
+/* Container das redes sociais */
+.footer-social-links {
+    display: flex;
+    gap: 15px;
+}
+
+/* Link de rede social */
+.footer-social-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 45px;
+    height: 45px;
+    background-color: var(--cor-cinza-escuro);
+    border-radius: 50%;
+    font-size: 1.2rem;
+    transition: var(--transicao-padrao);
+}
+
+.footer-social-link:hover {
+    background-color: var(--cor-primaria);
+    transform: translateY(-3px);
+}
+
+/* Barra inferior do footer */
+.footer-bottom {
+    padding: 25px var(--espacamento-container);
+    text-align: center;
+}
+
+/* Texto de copyright */
+.footer-copyright {
+    font-size: 0.9rem;
+    color: var(--cor-cinza);
+}
+
+/* ===== BOTÃO VOLTAR AO TOPO ===== */
+/* Botão fixo que aparece ao rolar */
+.back-to-top {
+    position: fixed;
+    bottom: 100px;
+    right: 30px;
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(135deg, var(--cor-primaria), var(--cor-primaria-escura));
+    color: var(--cor-branco);
+    border-radius: 50%;
+    font-size: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: var(--transicao-padrao);
+    box-shadow: 0 4px 15px rgba(255, 107, 0, 0.4);
+    z-index: 999;
+}
+
+/* Quando o botão está visível */
+.back-to-top.visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Hover do botão */
+.back-to-top:hover {
+    transform: translateY(-5px);
+}
+
+/* ===== BOTÃO FLUTUANTE WHATSAPP ===== */
+/* Botão fixo de WhatsApp */
+.whatsapp-float {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, #25d366, #128c7e);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
+    transition: var(--transicao-padrao);
+    z-index: 999;
+    animation: pulse 2s infinite;
+}
+
+/* Ícone do WhatsApp */
+.whatsapp-float-icon {
+    font-size: 1.8rem;
+}
+
+/* Hover do botão */
+.whatsapp-float:hover {
+    transform: scale(1.1);
+}
+
+/* Animação de pulsar */
+@keyframes pulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.5);
+    }
+    70% {
+        box-shadow: 0 0 0 15px rgba(37, 211, 102, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+    }
+}
+
+/* ===== UTILITÁRIOS ===== */
+/* Classes utilitárias reutilizáveis */
+
+/* Esconde elementos visualmente mas mantém acessível */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}

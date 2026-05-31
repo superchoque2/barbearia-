@@ -1,0 +1,641 @@
+/* ===================================================
+   BARBERKING - ESTILOS RESPONSIVOS
+   Arquivo: responsive.css
+   Descrição: Adaptações para diferentes tamanhos de tela
+   =================================================== */
+
+/* ===== BREAKPOINT: 1440px ===== */
+/* Telas grandes (desktops grandes) */
+@media screen and (max-width: 1440px) {
+    /* Reduz o tamanho do título da hero */
+    .hero-title {
+        font-size: 4rem;
+    }
+    
+    /* Ajusta o espaçamento das seções */
+    :root {
+        --espacamento-secao: 80px;
+    }
+}
+
+/* ===== BREAKPOINT: 1280px ===== */
+/* Telas médias-grandes (laptops grandes) */
+@media screen and (max-width: 1280px) {
+    /* Reduz os títulos */
+    .hero-title {
+        font-size: 3.5rem;
+    }
+    
+    .sobre-title,
+    .servicos-title,
+    .galeria-title,
+    .localizacao-title {
+        font-size: 2.5rem;
+    }
+    
+    /* Ajusta o grid de serviços para 2 colunas */
+    .servicos-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    /* Ajusta o grid do footer */
+    .footer-container {
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 40px;
+    }
+    
+    /* Move a coluna de redes sociais para baixo */
+    .footer-brand {
+        grid-column: span 3;
+    }
+}
+
+/* ===== BREAKPOINT: 1024px ===== */
+/* Tablets em modo paisagem e laptops pequenos */
+@media screen and (max-width: 1024px) {
+    /* ===== NAVEGAÇÃO ===== */
+    /* Mostra o botão hamburguer */
+    .nav-toggle {
+        display: flex;
+    }
+    
+    /* Esconde o menu de navegação (será mostrado via JS) */
+    .nav-menu {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 80%;
+        max-width: 400px;
+        height: 100vh;
+        background-color: var(--cor-preto);
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 30px;
+        transition: var(--transicao-padrao);
+        box-shadow: -5px 0 30px rgba(0, 0, 0, 0.5);
+    }
+    
+    /* Quando o menu está aberto */
+    .nav-menu.active {
+        right: 0;
+    }
+    
+    /* Links do menu em tela cheia */
+    .nav-link {
+        font-size: 1.2rem;
+    }
+    
+    /* Esconde o botão CTA do header em mobile */
+    .nav-button {
+        display: none;
+    }
+    
+    /* Transforma o hamburguer em X quando ativo */
+    .nav-toggle.active .nav-toggle-line:nth-child(1) {
+        transform: rotate(45deg) translate(6px, 6px);
+    }
+    
+    .nav-toggle.active .nav-toggle-line:nth-child(2) {
+        opacity: 0;
+    }
+    
+    .nav-toggle.active .nav-toggle-line:nth-child(3) {
+        transform: rotate(-45deg) translate(6px, -6px);
+    }
+    
+    /* ===== HERO ===== */
+    /* Remove o efeito parallax em tablets */
+    .hero {
+        background-attachment: scroll;
+    }
+    
+    .hero-title {
+        font-size: 3rem;
+    }
+    
+    .hero-text {
+        font-size: 1.1rem;
+    }
+    
+    /* ===== SOBRE ===== */
+    /* Muda para layout em coluna */
+    .sobre-container {
+        grid-template-columns: 1fr;
+        gap: 60px;
+    }
+    
+    .sobre-content {
+        padding-left: 0;
+        text-align: center;
+    }
+    
+    .sobre-image-wrapper {
+        max-width: 500px;
+        margin: 0 auto;
+    }
+    
+    .sobre-badge {
+        right: 0;
+    }
+    
+    .sobre-diferenciais {
+        text-align: left;
+        max-width: 400px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+    /* ===== GALERIA ===== */
+    /* Ajusta o grid da galeria */
+    .galeria-grid {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: auto;
+    }
+    
+    .galeria-item-large {
+        grid-column: span 2;
+        grid-row: span 1;
+    }
+    
+    .galeria-item-wide {
+        grid-column: span 2;
+    }
+    
+    /* ===== LOCALIZAÇÃO ===== */
+    /* Muda para layout em coluna */
+    .localizacao-container {
+        grid-template-columns: 1fr;
+        gap: 50px;
+    }
+    
+    .localizacao-info {
+        padding-right: 0;
+        text-align: center;
+    }
+    
+    .localizacao-cards {
+        max-width: 500px;
+        margin: 0 auto;
+    }
+    
+    .localizacao-card {
+        text-align: left;
+    }
+    
+    /* ===== FOOTER ===== */
+    .footer-container {
+        grid-template-columns: 1fr 1fr;
+    }
+    
+    .footer-brand {
+        grid-column: span 2;
+        text-align: center;
+    }
+    
+    .footer-description {
+        max-width: 100%;
+        margin: 0 auto;
+    }
+    
+    .footer-logo {
+        justify-content: center;
+    }
+}
+
+/* ===== BREAKPOINT: 768px ===== */
+/* Tablets em modo retrato */
+@media screen and (max-width: 768px) {
+    /* ===== GERAL ===== */
+    :root {
+        --espacamento-secao: 60px;
+    }
+    
+    /* ===== HERO ===== */
+    .hero-title {
+        font-size: 2.5rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 0.9rem;
+        letter-spacing: 2px;
+    }
+    
+    .hero-text {
+        font-size: 1rem;
+    }
+    
+    /* Botões em coluna no mobile */
+    .hero-buttons {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .hero-button-cta,
+    .hero-button-secondary {
+        width: 100%;
+        max-width: 300px;
+        justify-content: center;
+        padding: 16px 30px;
+    }
+    
+    /* Esconde o indicador de scroll */
+    .hero-scroll-indicator {
+        display: none;
+    }
+    
+    /* ===== TÍTULOS DAS SEÇÕES ===== */
+    .sobre-title,
+    .servicos-title,
+    .galeria-title,
+    .localizacao-title,
+    .cta-whatsapp-title {
+        font-size: 2rem;
+    }
+    
+    /* ===== SOBRE ===== */
+    .sobre-image img {
+        height: 400px;
+    }
+    
+    .sobre-badge {
+        position: relative;
+        bottom: auto;
+        right: auto;
+        margin-top: 20px;
+        display: inline-block;
+    }
+    
+    .sobre-image-wrapper {
+        text-align: center;
+    }
+    
+    /* ===== SERVIÇOS ===== */
+    /* Uma coluna no mobile */
+    .servicos-grid {
+        grid-template-columns: 1fr;
+        max-width: 400px;
+        margin: 0 auto;
+    }
+    
+    .servicos-card {
+        padding: 35px 25px;
+    }
+    
+    /* ===== GALERIA ===== */
+    .galeria-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .galeria-item-large,
+    .galeria-item-wide {
+        grid-column: span 1;
+    }
+    
+    .galeria-item {
+        height: 250px;
+    }
+    
+    /* ===== CTA WHATSAPP ===== */
+    .cta-whatsapp {
+        padding: 60px 0;
+    }
+    
+    .cta-whatsapp-text {
+        font-size: 1rem;
+    }
+    
+    .cta-whatsapp-button {
+        padding: 16px 35px;
+        font-size: 1rem;
+    }
+    
+    /* ===== FOOTER ===== */
+    .footer {
+        padding: 60px 0 0;
+    }
+    
+    .footer-container {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 40px;
+    }
+    
+    .footer-brand {
+        grid-column: span 1;
+    }
+    
+    .footer-menu {
+        gap: 10px;
+    }
+    
+    .footer-social-links {
+        justify-content: center;
+    }
+    
+    /* ===== BOTÕES FLUTUANTES ===== */
+    .whatsapp-float {
+        width: 55px;
+        height: 55px;
+        bottom: 20px;
+        right: 20px;
+    }
+    
+    .back-to-top {
+        width: 45px;
+        height: 45px;
+        bottom: 85px;
+        right: 20px;
+    }
+}
+
+/* ===== BREAKPOINT: 480px ===== */
+/* Smartphones */
+@media screen and (max-width: 480px) {
+    /* ===== GERAL ===== */
+    :root {
+        --espacamento-secao: 50px;
+        --espacamento-container: 6%;
+    }
+    
+    body {
+        font-size: 15px;
+    }
+    
+    /* ===== NAVEGAÇÃO ===== */
+    .nav-logo {
+        font-size: 1.4rem;
+    }
+    
+    .nav-logo-icon {
+        font-size: 1.2rem;
+    }
+    
+    .nav-menu {
+        width: 100%;
+        max-width: 100%;
+    }
+    
+    /* ===== HERO ===== */
+    .hero {
+        min-height: 100svh; /* Usa svh para melhor comportamento em mobile */
+    }
+    
+    .hero-title {
+        font-size: 2rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 0.8rem;
+        letter-spacing: 1px;
+    }
+    
+    .hero-text {
+        font-size: 0.95rem;
+        margin-bottom: 30px;
+    }
+    
+    .hero-button-cta,
+    .hero-button-secondary {
+        padding: 14px 25px;
+        font-size: 0.9rem;
+    }
+    
+    /* ===== TÍTULOS DAS SEÇÕES ===== */
+    .sobre-title,
+    .servicos-title,
+    .galeria-title,
+    .localizacao-title,
+    .cta-whatsapp-title {
+        font-size: 1.7rem;
+    }
+    
+    .sobre-subtitle,
+    .servicos-subtitle,
+    .galeria-subtitle,
+    .localizacao-subtitle {
+        font-size: 0.85rem;
+        letter-spacing: 2px;
+    }
+    
+    /* ===== SOBRE ===== */
+    .sobre-image img {
+        height: 300px;
+    }
+    
+    .sobre-text {
+        font-size: 0.95rem;
+    }
+    
+    .sobre-diferencial-item {
+        font-size: 0.9rem;
+        padding: 10px 0;
+    }
+    
+    .sobre-badge {
+        padding: 20px;
+    }
+    
+    .sobre-badge-number {
+        font-size: 2.5rem;
+    }
+    
+    .sobre-badge-text {
+        font-size: 0.8rem;
+    }
+    
+    /* ===== SERVIÇOS ===== */
+    .servicos-card {
+        padding: 30px 20px;
+    }
+    
+    .servicos-card-icon {
+        font-size: 2.5rem;
+    }
+    
+    .servicos-card-title {
+        font-size: 1.3rem;
+    }
+    
+    .servicos-card-text {
+        font-size: 0.9rem;
+    }
+    
+    .servicos-card-price {
+        font-size: 1.5rem;
+    }
+    
+    .servicos-description {
+        font-size: 1rem;
+    }
+    
+    /* ===== GALERIA ===== */
+    .galeria-item {
+        height: 200px;
+    }
+    
+    .galeria-item-text {
+        font-size: 1rem;
+    }
+    
+    .galeria-description {
+        font-size: 1rem;
+    }
+    
+    /* ===== LOCALIZAÇÃO ===== */
+    .localizacao-card {
+        padding: 20px;
+        flex-direction: column;
+        text-align: center;
+        gap: 15px;
+    }
+    
+    .localizacao-card-icon {
+        font-size: 1.8rem;
+    }
+    
+    .localizacao-card-title {
+        font-size: 1.1rem;
+    }
+    
+    .localizacao-card-text {
+        font-size: 0.9rem;
+    }
+    
+    .localizacao-mapa iframe {
+        height: 300px;
+    }
+    
+    /* ===== CTA WHATSAPP ===== */
+    .cta-whatsapp {
+        padding: 50px 0;
+    }
+    
+    .cta-whatsapp-title {
+        font-size: 1.5rem;
+    }
+    
+    .cta-whatsapp-text {
+        font-size: 0.95rem;
+    }
+    
+    .cta-whatsapp-button {
+        padding: 14px 28px;
+        font-size: 0.9rem;
+    }
+    
+    /* ===== FOOTER ===== */
+    .footer {
+        padding: 50px 0 0;
+    }
+    
+    .footer-container {
+        gap: 30px;
+        padding-bottom: 40px;
+    }
+    
+    .footer-logo {
+        font-size: 1.3rem;
+    }
+    
+    .footer-title {
+        font-size: 1.1rem;
+        margin-bottom: 20px;
+    }
+    
+    .footer-description,
+    .footer-link,
+    .footer-text {
+        font-size: 0.9rem;
+    }
+    
+    .footer-social-link {
+        width: 40px;
+        height: 40px;
+        font-size: 1rem;
+    }
+    
+    .footer-bottom {
+        padding: 20px var(--espacamento-container);
+    }
+    
+    .footer-copyright {
+        font-size: 0.8rem;
+    }
+    
+    /* ===== BOTÕES FLUTUANTES ===== */
+    .whatsapp-float {
+        width: 50px;
+        height: 50px;
+        bottom: 15px;
+        right: 15px;
+    }
+    
+    .whatsapp-float-icon {
+        font-size: 1.5rem;
+    }
+    
+    .back-to-top {
+        width: 40px;
+        height: 40px;
+        bottom: 75px;
+        right: 15px;
+        font-size: 1.2rem;
+    }
+}
+
+/* ===== BREAKPOINT: 360px ===== */
+/* Smartphones muito pequenos */
+@media screen and (max-width: 360px) {
+    .hero-title {
+        font-size: 1.7rem;
+    }
+    
+    .sobre-title,
+    .servicos-title,
+    .galeria-title,
+    .localizacao-title,
+    .cta-whatsapp-title {
+        font-size: 1.5rem;
+    }
+    
+    .hero-button-cta,
+    .hero-button-secondary,
+    .cta-whatsapp-button {
+        padding: 12px 20px;
+        font-size: 0.85rem;
+    }
+}
+
+/* ===== PREFERÊNCIA DE MOVIMENTO REDUZIDO ===== */
+/* Desativa animações para usuários que preferem menos movimento */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+    
+    html {
+        scroll-behavior: auto;
+    }
+}
+
+/* ===== MODO PAISAGEM EM SMARTPHONES ===== */
+/* Ajustes específicos para smartphones em modo paisagem */
+@media screen and (max-height: 500px) and (orientation: landscape) {
+    .hero {
+        min-height: auto;
+        padding: 100px 0 60px;
+    }
+    
+    .hero-title {
+        font-size: 2rem;
+    }
+    
+    .hero-scroll-indicator {
+        display: none;
+    }
+}
